@@ -30,7 +30,6 @@ class ChartContainer extends Component {
           buttonElements[index].classList.add('play-button');
         } else {
           audioElement.play();
-          console.log(buttonElements[index]);
           buttonElements[index].classList.remove('play-button')
           buttonElements[index].classList.add('pause-button')
         }

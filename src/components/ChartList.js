@@ -17,17 +17,15 @@ const ChartList = (props) => {
           id={index}
           src={song.link[1].attributes.href}
         />
-        <div className="play-border">
-          <button
-            className="play-button"
-            value={index}
-            onClick={(event) => {
-              props.playPause(event);
-            }
+        <button
+          className="play-button"
+          value={index}
+          onClick={(event) => {
+            props.playPause(event);
           }
-          >
-          </button>
-        </div>
+        }
+        >
+        </button>
       </div>
     )
   })
