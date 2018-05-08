@@ -7,10 +7,12 @@ const ChartList = (props) => {
 
   const songs = props.chart.map((song, index) => {
     return (
-      <li> {song['im:name'].label}
+      <li key={index}> {song['im:name'].label}
         <p id='artist'>
           - {song['im:artist'].label}
         </p>
+        <audio controls src={song.link[1].attributes.href} />
+        <p>Price: {song['im:price'].label}</p>
       </li>
     )
   })

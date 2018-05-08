@@ -15,7 +15,6 @@ class ChartContainer extends Component {
   componentDidMount() {
     const url = 'https://itunes.apple.com/gb/rss/topsongs/limit=20/json'
     request(url, (data) => {
-      console.log(data);
       this.setState( { chart: data.feed.entry } )
     })
   }
