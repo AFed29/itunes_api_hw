@@ -7,20 +7,35 @@ const ChartList = (props) => {
 
   const songs = props.chart.map((song, index) => {
     return (
-      <li key={index}> {song['im:name'].label}
-        <p id='artist'>
+      <div className='song' key={index}>
+        <p className='chart-position'> {index + 1} </p>
+        <p className='song-title'> {song['im:name'].label} </p>
+        <p className='artist'>
           - {song['im:artist'].label}
         </p>
-        <audio controls src={song.link[1].attributes.href} />
-        <p>Price: {song['im:price'].label}</p>
-      </li>
+        <audio
+          id={index}
+          src={song.link[1].attributes.href}
+        />
+        <div className="play-border">
+          <button
+            className="play-button"
+            value={index}
+            onClick={(event) => {
+              props.playPause(event);
+            }
+          }
+          >
+          </button>
+        </div>
+      </div>
     )
   })
 
   return (
-    <ol>
+    <div>
       {songs}
-    </ol>
+    </div>
   )
 }
 

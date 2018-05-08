@@ -1,3 +1,36 @@
-#artist {
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  margin: 0.25rem;
+  padding: 0.25rem;
+}
+
+li {
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+audio {
+  padding-left: 2rem;
+}
+
+button {
+  margin-left: 2rem;
+}
+
+.chart-position {
+  display: inline-block;
+}
+
+.song-title {
+  display: inline-block;
+  padding-left: 1rem;
+}
+
+.artist {
+  padding-left: 2rem;
   font-style: italic;
 }

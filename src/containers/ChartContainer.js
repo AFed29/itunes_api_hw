@@ -19,10 +19,33 @@ class ChartContainer extends Component {
     })
   }
 
+  pauseAllOtherAudio(event) {
+    const audioElements = Array.from(document.getElementsByTagName("audio"));
+    const buttonElements = Array.from(document.getElementsByTagName("button"));
+    audioElements.forEach((audioElement, index) => {
+      if (audioElement.id === event.target.value) {
+        if (!audioElement.paused) {
+          audioElement.pause();
+          buttonElements[index].classList.remove('pause-button');
+          buttonElements[index].classList.add('play-button');
+        } else {
+          audioElement.play();
+          console.log(buttonElements[index]);
+          buttonElements[index].classList.remove('play-button')
+          buttonElements[index].classList.add('pause-button')
+        }
+      } else {
+        audioElement.pause();
+        buttonElements[index].classList.remove('pause-button');
+        buttonElements[index].classList.add('play-button');
+      }
+    })
+  }
+
   render() {
 
     return (
-      <ChartList chart={this.state.chart}/>
+      <ChartList chart={this.state.chart} playPause={this.pauseAllOtherAudio}/>
     );
   }
 }
