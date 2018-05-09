@@ -8,7 +8,7 @@ const ChartList = (props) => {
   const songs = props.chart.map((song, index) => {
     return (
       <div className='song' key={index}>
-        <p className='chart-position'> {index + 1} </p>
+        <p className='chart-position'> {index + 1}. </p>
         <p className='song-title'> {song['im:name'].label} </p>
         <p className='artist'>
           - {song['im:artist'].label}
